@@ -1,0 +1,167 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- StyleSheets -->
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/custom.css" rel="stylesheet">
+		<link href="css/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		
+		<!-- --------------------------------  -->
+	</head>
+	<body>
+	
+		<!-- Navbar -->
+		<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#"><img src="images/logo.png"/></a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right nav-al">
+						<li class="active"><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#events">Events</a></li>
+						<li><a href="#contact">Contact</a></li>
+						<li><a href="#sponsors">Sponsors</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
+	
+		<!-- Navbar closes -->
+		
+		
+		<!-- Sections start -->
+		<section id="home" class="section-al container">
+			<h1 class="fest-name-al">Altius 2014</h1>
+			<h2 class="fest-quote-al">NIT Kurukshetra</h2>
+			<h2 class="fest-date-al">17-19<sup>th</sup> October</h2>
+			<a class="down-arrow-al" href="#about">Down</a>
+		</section>
+		
+		<section id="about" class="section-al container">
+			<h1>ABOUT ALTIUS</h1>
+			<p>Altius at NIT Kurukshetra is a two days techno-managerial fest. 
+			Packed with 50+ events, it has everything in store for the quiz lovers, budding engineers, future technocrats and managerial minds alike. 
+			It is held collectively by six technical societies pertaining to various departments of the institute. 
+			</p>
+			<p>So show what you've got inside you, flaunt your mojo and fill your shelf with prizes to be won.</p>
+		</section>
+		
+		<section id="events" class="section-al container">
+			<div class="horizontalSection-al black-al" id="eventHead">
+				<a class="navLink eventBox-al" href="#eventGroups">Events<br><i class="fa fa-pied-piper-alt"></i></a>
+			</div>
+			<div class="horizontalSection-al white-al" id="eventGroups">
+				<ul class="categoryList-al">
+					<li class="active-al" data-society="technobyte">Technobyte</li>
+					<li data-society="infrastructure">Infrastructure</li>
+					<li data-society="microbus" >Microbus</li>
+					<li data-society="electrorek">Electrorek</li>
+					<li data-society="mechsoc">Mechsoc</li>
+					<li data-society="mexperts">MExperts</li>
+					<li data-society="none"><a class="navLink" href="#eventHead">&larr; Go back to home page</a></li>
+				</ul>
+				<div class="eventsList-al">
+					There are six societies which organise Altius. Events organised by these societies have no bar of branch. Anyone, not from final year,
+					can take part in any event organised by any society. Click any Society name on the left to check out all the events.
+					<ul class="eventsBoxList-al">
+						<li>Excalibur</li>
+						<li></li>
+						<li></li>
+						<li>Excalibur</li><li>Excalibur</li><li>Excalibur</li>
+						<li>Excalibur</li>
+						<li></li>
+						<li></li>
+						<li>Excalibur</li><li>Excalibur</li><li>Excalibur</li>
+					</ul>
+				</div>
+			</div>
+			<div class="horizontalSection-al black-al" id="event">
+				<div class="event-al">
+					<div id="description">
+					</div>
+				</div>
+				<a class="navLink" href="#eventGroups">Back to Groups</a>
+			</div>
+		</section>
+		
+		
+		<!-- Sections end -->
+	<!-- Scripts -->
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script>
+	var scroll_with_click;
+	$(function() {
+		scroll_with_click = false;
+		$(window).scroll(function() {
+			if($(document).scrollTop()!=0){
+				$('.navbar').css('padding','0');
+				$('.navbar-brand img').css('height','30');
+			}
+			else{
+				$('.navbar').css('padding','20px');
+				$('.navbar-brand img').css('height','40');
+			}
+			
+			/*if(!scroll_with_click){
+				var position = 33.3333333333333*120;
+				if($(document).scrollLeft()<position)
+				$('html, body').stop().animate({
+					scrollLeft: $('#eventHead').offset().left
+				}, 1000);
+				else if($(document).scrollLeft()>=position&&$(document).scrollLeft()<2*position)
+					$('html, body').stop().animate({
+					scrollLeft: $('#eventGroups').offset().left
+				}, 1000);
+				else
+				$('html, body').stop().animate({
+					scrollLeft: $('#event').offset().left
+				}, 1000);
+			}*/
+		});
+		
+		$('.eventsBoxList-al li').click(function(event){
+			scroll_with_click = true;
+			$('html, body').stop().animate({
+                scrollLeft: $('#event').offset().left
+			}, 15000);
+			setTimeout(function(){
+				scroll_with_click = false;
+			},1000);
+			event.preventDefault();
+		});
+        $('a.navLink').bind('click',function(event){
+			scroll_with_click = true;
+            var $anchor = $(this);
+                    /*
+                    if you want to use one of the easing effects:
+                    $('html, body').stop().animate({
+                        scrollLeft: $($anchor.attr('href')).offset().left
+                    }, 1500,'easeInOutExpo');
+                     */
+            $('html, body').stop().animate({
+                scrollLeft: $($anchor.attr('href')).offset().left
+            }, 1500,'easeInOutExpo');
+			setTimeout(function(){
+				scroll_with_click = false;
+			},1000);
+            event.preventDefault();
+        });
+    });
+			</script>
+	<!-- --------------------------- ->
+	
+	</body>
+</html>

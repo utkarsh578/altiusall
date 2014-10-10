@@ -1,0 +1,43 @@
+.popup {
+	background:yellow; 
+	height:100px; 
+	top:40%; 
+	z-index:100; 
+	border:3px solid; 
+	border-color:black; 
+	visibility:hidden;
+}
+.eventlist {
+	padding: 10px; 
+	background:yellow; 
+	height:750px;
+}
+.eventname {
+	background:rgba(181, 31, 227, 1); 
+	margin:5px; 
+	left:20px; 
+	height: 50px; 
+	font-size: 25px !important;
+}
+.addNewEvent {
+	height:40px; 
+	left:10px; 
+	margin:10px; 
+	bottom:5%;
+	position:absolute;	
+}
+.eventDetail{
+	background:rgba(181, 31, 227, 1); 
+	height:1000px; 
+	padding: 10px; 
+	overflow:hidden; 
+	visibility:hidden;
+	overflow:hidden;
+}
+.cover {
+	position:absolute; 
+	background:rgba(181, 31, 227, 1); 
+	height:750px; 
+	padding: 10px;
+	overflow:hidden;
+}
